@@ -1,0 +1,16 @@
+extends layout/default
+
+block variables
+- var title = 'Закрывающий тег';
+- var description = 'Яндекс проект спринта №4';
+-
+    var cardsArray = [
+    {'imgUrl': '', 'altText': '', 'title': '', 'text': ''},
+    {'imgUrl': '', 'altText': '', 'title': '', 'text': ''}
+    ]
+
+block content
+    include ./components/card/card
+    each card in cardsArray
+    +card(card.imgUrl, card.altText, card.title, card.text)
+
