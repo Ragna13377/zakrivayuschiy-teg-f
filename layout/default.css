@@ -1,0 +1,233 @@
+@charset "UTF-8";
+/* В этом файле уже написаны некоторые базовые стили, которые сбрасывают или преобразуют дефольное браузерное поведение.
+Здесь же лежит утилитарный класс visually-hidden на случай, если нужно скрыть какой-то элемент, но оставить доступным для скринридера.
+Вы можете изменять этот файл или дополнять. Но скорее всего, вам это не потребуется. */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  color: currentColor;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+:root {
+  --font: "Inter-Variable";
+  --font-callback: "Inter";
+  --accent-font: "PressStart2P";
+  --fw-text_light: 400;
+  --fw-title-text_light: 700;
+  --text-color_light: #000;
+  --bg-color_light: #fff;
+  --bg-image_light: "./images/background.png";
+  --bg-grid-start_light: #d3d3d3;
+  --bg-grid-end_light: rgba(211, 211, 211, 0);
+  --bg-color-start_light: #e7e7e7;
+  --bg-color-end_light: #1a1a1a;
+  --text-stroke_light: #fff;
+  --fw-text_dark: 465;
+  --fw-title-text_dark: 785;
+  --text-color_dark: #00CC14;
+  --bg-color_dark: #000;
+  --bg-image_dark: "./images/background_dark.png";
+  --bg-grid-start_dark: #000;
+  --bg-grid-end_dark: rgba(0, 0, 0, 0);
+  --bg-color-start_dark: #007f0c;
+  --bg-color-end_dark: #004306;
+  --text-stroke_dark: #000;
+}
+
+:root {
+  --fw-text: var(--fw-text_light, 400);
+  --fw-title-text: var(--fw-title-text_light, 700);
+  --text-color: var(--text-color_light, #000);
+  --bg-color: var(--bg-color_light, #fff);
+  --bg-image: var(--bg-image_light,"./images/background.png");
+  --bg-grid-start: var(--bg-grid-start_light, #d3d3d3);
+  --bg-grid-end: var(--bg-grid-end_light, rgba(211, 211, 211, 0));
+  --bg-color-start: var(--bg-color-start_light, #e7e7e7);
+  --bg-color-end: var(--bg-color-end_light, #1a1a1a);
+  --text-stroke: var(--text-stroke_light, #fff);
+}
+
+.header {
+  padding-block: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) 25px;
+  margin-block-end: 104px;
+  font-family: var(--accent-font, Consolas, monospace);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+.header__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  margin-block-end: 20px;
+}
+.header__name {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  margin-block-end: 25px;
+}
+
+.theme-menu .theme-menu__list {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: start;
+  margin-inline-start: 15px;
+}
+.theme-menu .theme-menu__button {
+  position: relative;
+  color: var(--text-color);
+  font-family: var(--accent-font, Consolas, monospace);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: list-item;
+  transition: opacity 0.3s ease;
+}
+.theme-menu .theme-menu__button:after {
+  content: "";
+  position: absolute;
+  background-color: currentColor;
+  inset-block-end: -5px;
+  inset-inline-start: -3px;
+  inline-size: calc(100% + 6px);
+  block-size: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.theme-menu .theme-menu__button:disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+.theme-menu .theme-menu__button:disabled:before {
+  position: absolute;
+  content: "▶";
+  inset-inline-start: -20px;
+  animation: dancing_trangle 0.5s ease-in-out infinite alternate;
+}
+.theme-menu .theme-menu__button:hover, .theme-menu .theme-menu__button:focus {
+  outline: none;
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
+}
+.theme-menu .theme-menu__button:focus-visible:after {
+  transform: scaleX(1);
+  transition: transform 0.3s ease;
+}
+
+.footer {
+  margin-block-start: 54px;
+  padding-inline: 35px;
+}
+.footer__button {
+  display: flex;
+  gap: 8px;
+  padding: 20px 15px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.footer svg {
+  inline-size: 21px;
+  aspect-ratio: 1/1;
+}
+
+@media (width <= 375px) {
+  .footer svg {
+    inline-size: 28px;
+  }
+}
+.footer.page__container {
+  border: none;
+  background-color: transparent;
+}
+
+.page {
+  font-family: var(--font-callback, Arial, sans-serif);
+  font-variation-settings: "wght" var(--fw-text);
+  background-color: var(--bg-color);
+  background-image: repeating-linear-gradient(90deg, var(--bg-grid-start) 0, var(--bg-grid-start) 2px, var(--bg-grid-end) 2px, var(--bg-grid-end) 4px), repeating-linear-gradient(var(--bg-grid-start) 0, var(--bg-grid-start) 2px, var(--bg-grid-end) 2px, var(--bg-grid-end) 4px), linear-gradient(var(--bg-color-start) 0.01%, var(--bg-color-end));
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-color);
+  padding-block: 105px 102px;
+}
+@supports (font-variation-settings: normal) {
+  .page {
+    font-family: var(--font, Arial, sans-serif);
+  }
+}
+
+.common-button {
+  background-color: var(--bg-color);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+  font-size: 14px;
+  font-family: var(--accent-font, Consolas, monospace);
+  border: 2px solid currentColor;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+.common-button:focus {
+  outline: none;
+}
+.common-button:focus-visible {
+  box-shadow: 2px 2px 0 var(--text-color);
+  transition: box-shadow 0.3s ease;
+}
+
+/*# sourceMappingURL=default.css.map */

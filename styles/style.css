@@ -1,0 +1,128 @@
+@charset "UTF-8";
+/* Здесь вы напишете основную часть стилей страницы.
+
+Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+✦ theme-dark — класс тёмной темы
+✦ theme-light — класс светлой темы
+✦ like-icon — для svg-иконки анимированного сердца
+✦ card__like-button — для кнопки Like рядом с иконкой
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ card__icon-button — для кнопки, оборачивающей иконку
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
+✦ button__text — для обозначения текстового элемента внутри кнопки
+
+Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
+
+*/
+.page {
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+}
+.page__container {
+  margin-inline: auto;
+  border: 2px solid var(--text-color);
+  background-color: var(--bg-color);
+  max-width: min(696px, 100vw);
+}
+.page .page__list > *:not(:last-child) {
+  margin-bottom: 54px;
+}
+
+.card {
+  color: var(--text-color);
+}
+.card__title {
+  font-size: 18px;
+  padding: 10px 5px;
+  line-height: normal;
+  font-style: normal;
+  font-variation-settings: "wght" var(--fw-title-text);
+}
+.card__picture-wrapper {
+  position: relative;
+}
+.card__image {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  aspect-ratio: 1/1;
+}
+.card_filter-hue {
+  filter: brightness(0.8) hue-rotate(45deg);
+}
+.card_filter-opacity {
+  filter: brightness(0.8) opacity(0.8);
+}
+.card_filter-sepia {
+  filter: brightness(0.5) sepia(0.6);
+}
+.card_filter-blur {
+  filter: brightness(0.8) blur(0.8px);
+}
+.card_filter-bright-contrast {
+  filter: brightness(0.8) contrast(1.4);
+}
+.card_filter-grayscale {
+  filter: brightness(0.8) grayscale(0.6);
+}
+.card_filter-invert {
+  filter: brightness(2) grayscale(0.5) invert(0.2);
+}
+.card_filter-saturate {
+  filter: brightness(0.8) saturate(1.5);
+}
+.card__label {
+  position: absolute;
+  inset-inline-end: clamp(0.6875rem, 0.3794rem + 1.3146vw, 1.5625rem);
+  inset-block-start: 25px;
+  font-family: var(--accent-font, Consolas, monospace);
+  color: var(--text-color);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  z-index: 1;
+  text-shadow: -1px 0 var(--text-stroke), 0 1px var(--text-stroke), 1px 0 var(--text-stroke), 0 -1px var(--text-stroke);
+}
+@supports (text-stroke: 1px var(--text-stroke)) or (-webkit-text-stroke: 1px var(--text-stroke)) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--text-stroke);
+    text-stroke: 1px var(--text-stroke);
+    text-shadow: none;
+  }
+}
+.card__content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.card__text {
+  font-size: 18px;
+  line-height: 116.6666666667%;
+  font-style: normal;
+  font-variation-settings: "wght" var(--fw-text);
+}
+.card__button-container {
+  display: flex;
+  gap: 12px;
+  padding: 0 25px 25px;
+  justify-content: end;
+  align-items: center;
+}
+.card__icon-button {
+  border: none;
+  padding: 0;
+  background-color: var(--bg-color);
+  cursor: pointer;
+}
+.card__like-button {
+  padding: 9px 17px;
+}
+.card .like-icon path {
+  fill: var(--text-color);
+}
+
+/*# sourceMappingURL=style.css.map */

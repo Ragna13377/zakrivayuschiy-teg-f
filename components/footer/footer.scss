@@ -1,0 +1,30 @@
+.footer{
+  margin-block-start: 54px;
+  padding-inline: 35px;
+  &__button{
+   display: flex;
+   gap: 8px;
+   padding: 20px 15px;
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
+   flex-wrap: wrap;
+  }
+  svg{
+   inline-size: 21px;
+   aspect-ratio: 1/1;
+  }
+}
+
+@media (width <= 375px) {
+  .footer{
+    svg{
+      inline-size: 28px;
+    }
+  }
+}
+
+.footer.page__container{
+  border: none;
+  background-color: transparent;
+}

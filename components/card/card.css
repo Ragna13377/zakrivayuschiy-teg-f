@@ -1,0 +1,16 @@
+.card {
+  color: var(--text-color);
+  font-size: 18px;
+  font-style: normal;
+}
+.card .card__title {
+  padding: 10px 5px;
+  line-height: normal;
+  font-weight: var(--fw-title-text);
+}
+.card .card__text {
+  line-height: 116.6666666667%;
+  font-weight: var(--fw-text);
+}
+
+/*# sourceMappingURL=card.css.map */

@@ -1,0 +1,31 @@
+@charset "UTF-8";
+.theme-menu .theme-menu__list {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: start;
+  margin-inline-start: 15px;
+  color: var(--text-color);
+}
+.theme-menu .theme-menu__item {
+  padding-inline-start: 4px;
+}
+.theme-menu .theme-menu__item:has(.theme-menu__button:disabled) {
+  opacity: 0.6;
+  list-style-type: "▶";
+  pointer-events: none;
+}
+.theme-menu .theme-menu__button {
+  font-family: var(--accent-font, Consolas, monospace);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=theme_menu.css.map */

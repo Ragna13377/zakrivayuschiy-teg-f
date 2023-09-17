@@ -1,0 +1,61 @@
+$btn_transition: 0.3s ease;
+.theme-menu{
+  .theme-menu__list{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: start;
+    margin-inline-start: 15px;
+  }
+  .theme-menu__button{
+    position: relative;
+    color: var(--text-color);
+    font-family: var(--accent-font, Consolas, monospace);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: list-item;
+    transition: opacity $btn_transition;
+    &:after{
+      $offset: 3px;
+      content: '';
+      position: absolute;
+      background-color: currentColor;
+      inset-block-end: -5px;
+      inset-inline-start: -$offset;
+      inline-size: calc(100% + $offset * 2);
+      block-size: 3px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform $btn_transition;
+    }
+    &:disabled{
+      pointer-events: none;
+      opacity: 0.6;
+      &:before{
+        position: absolute;
+        content: '▶';
+        inset-inline-start: -20px;
+        animation: dancing_trangle 0.5s ease-in-out infinite alternate;
+      }
+    }
+    &:hover, &:focus{
+      outline: none;
+      transition: opacity $btn_transition;
+      opacity: 0.6;
+    }
+    &:focus-visible{
+      &:after{
+        transform: scaleX(1);
+        transition: transform $btn_transition;
+      }
+    }
+  }
+}
+

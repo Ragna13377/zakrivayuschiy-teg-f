@@ -59,7 +59,7 @@ let path = {
     scss: [`${srcFolder}/styles/**.scss`, `!${srcFolder}/styles/{global,variables}.scss`],
     scss_layout: `${srcFolder}/layout/**/*.scss`,
     js: `${srcFolder}/scripts/**/*.js`,
-    images: `${srcFolder}/images/**/*.{avif,webp,ico,gif,png,jpg}`,
+    images: `${srcFolder}/images/**/*.{avif,webp,ico,gif,png,jpg,svg}`,
     svg: `${srcFolder}/svg/**/*.svg`,
     fonts: `${srcFolder}/fonts`,
     font_style: `${srcFolder}/fonts/fonts.scss`,
@@ -71,7 +71,7 @@ let path = {
     scss_components: `${srcFolder}/components/**/*.scss`,
     scss_layout: `${srcFolder}/layout/**/*.scss`,
     js: `${srcFolder}/scripts/**/*.js`,
-    images: `${srcFolder}/images/**/*.{avif,webp,ico,gif,png,jpg}`,
+    images: `${srcFolder}/images/**/*.{avif,webp,ico,gif,png,jpg,svg}`,
     svg: `${srcFolder}/svg/**/*.svg`,
     font_style: `${srcFolder}/fonts/fonts.scss`,
   },
@@ -162,6 +162,11 @@ function scss_layout(){
       .pipe(browserSync.stream());
 }
 
+function scss_components(){
+  return scss()
+      .pipe(scss_layout())
+}
+
 function css() {
   return gulp
     .src(path.src.css, {})
@@ -191,19 +196,19 @@ function font_style() {
     .pipe(gulp.dest(path.dest.fonts))
     .pipe(browserSync.stream());
 }
-
+//TODO: бандлит в app.min.js. Либо делить на 2 файла, либо подключить сразу в одном
 function js() {
   return gulp
     .src(path.src.js)
     .pipe(plumber())
-    .pipe(
-      webpack({
-        mode: isBuild ? 'development' : 'development',
-        output: {
-          filename: 'app.min.js',
-        },
-      })
-    )
+    // .pipe(
+    //   webpack({
+    //     mode: isBuild ? 'development' : 'development',
+    //     output: {
+    //       filename: 'app.min.js',
+    //     },
+    //   })
+    // )
     .pipe(gulp.dest(path.dest.js))
     .pipe(browserSync.stream());
 }
@@ -313,7 +318,7 @@ function clean() {
 function watchFiles() {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.scss], scss);
-  gulp.watch([path.watch.scss_components], scss);
+  gulp.watch([path.watch.scss_components], scss_components);
   gulp.watch([path.watch.scss_layout], scss_layout);
   gulp.watch([path.watch.font_style], font_style);
   gulp.watch([path.watch.js], js);
