@@ -2,10 +2,16 @@
   --font: 'Inter-Variable';
   --font-callback: 'Inter';
   --accent-font: 'PressStart2P';
+  --heart-sparks: #FF0000;
+  --heart-main-body: transparent;
+  --heart-core: transparent;
+  --heart-contour_light: #000;
+  --heart-contour_dark: #00CC14;
 
   --fw-text_light: 400;
   --fw-title-text_light: 700;
   --text-color_light: #000;
+  --text-animated_light: #fff;
   --bg-color_light: #fff;
   --bg-image_light: './images/background.png';
   --bg-grid-start_light: #d3d3d3;
@@ -17,6 +23,7 @@
   --fw-text_dark: 465;
   --fw-title-text_dark: 785;
   --text-color_dark: #00CC14;
+  --text-animated_dark: #00CC14;
   --bg-color_dark: #000;
   --bg-image_dark: './images/background_dark.png';
   --bg-grid-start_dark: #000;

@@ -1,87 +1,9 @@
 @charset "UTF-8";
-/* В этом файле уже написаны некоторые базовые стили, которые сбрасывают или преобразуют дефольное браузерное поведение.
-Здесь же лежит утилитарный класс visually-hidden на случай, если нужно скрыть какой-то элемент, но оставить доступным для скринридера.
-Вы можете изменять этот файл или дополнять. Но скорее всего, вам это не потребуется. */
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-li {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: inherit;
-}
-
-button,
-input {
-  color: currentColor;
-  font-family: inherit;
-  font-size: inherit;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
-.visually-hidden {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
-:root {
-  --font: "Inter-Variable";
-  --font-callback: "Inter";
-  --accent-font: "PressStart2P";
-  --fw-text_light: 400;
-  --fw-title-text_light: 700;
-  --text-color_light: #000;
-  --bg-color_light: #fff;
-  --bg-image_light: "./images/background.png";
-  --bg-grid-start_light: #d3d3d3;
-  --bg-grid-end_light: rgba(211, 211, 211, 0);
-  --bg-color-start_light: #e7e7e7;
-  --bg-color-end_light: #1a1a1a;
-  --text-stroke_light: #fff;
-  --fw-text_dark: 465;
-  --fw-title-text_dark: 785;
-  --text-color_dark: #00CC14;
-  --bg-color_dark: #000;
-  --bg-image_dark: "./images/background_dark.png";
-  --bg-grid-start_dark: #000;
-  --bg-grid-end_dark: rgba(0, 0, 0, 0);
-  --bg-color-start_dark: #007f0c;
-  --bg-color-end_dark: #004306;
-  --text-stroke_dark: #000;
-}
-
 :root {
   --fw-text: var(--fw-text_light, 400);
   --fw-title-text: var(--fw-title-text_light, 700);
   --text-color: var(--text-color_light, #000);
+  --text-animated: var(--text-animated_light, #fff);
   --bg-color: var(--bg-color_light, #fff);
   --bg-image: var(--bg-image_light,"./images/background.png");
   --bg-grid-start: var(--bg-grid-start_light, #d3d3d3);
@@ -89,6 +11,7 @@ ol {
   --bg-color-start: var(--bg-color-start_light, #e7e7e7);
   --bg-color-end: var(--bg-color-end_light, #1a1a1a);
   --text-stroke: var(--text-stroke_light, #fff);
+  --heart-contour: var(--heart-contour_light, #fff);
 }
 
 .header {
@@ -155,7 +78,7 @@ ol {
   inset-inline-start: -20px;
   animation: dancing_trangle 0.5s ease-in-out infinite alternate;
 }
-.theme-menu .theme-menu__button:hover, .theme-menu .theme-menu__button:focus {
+.theme-menu .theme-menu__button:focus, .theme-menu .theme-menu__button:hover {
   outline: none;
   transition: opacity 0.3s ease;
   opacity: 0.6;
@@ -171,7 +94,6 @@ ol {
 }
 .footer__button {
   display: flex;
-  gap: 8px;
   padding: 20px 15px;
   justify-content: center;
   align-items: center;
@@ -181,6 +103,7 @@ ol {
 .footer svg {
   inline-size: 21px;
   aspect-ratio: 1/1;
+  margin-inline-end: 8px;
 }
 
 @media (width <= 375px) {
@@ -220,7 +143,17 @@ ol {
   border: 2px solid currentColor;
   color: var(--text-color);
   cursor: pointer;
+  position: relative;
   transition: box-shadow 0.3s ease;
+}
+.common-button:before {
+  content: "";
+  background-color: currentColor;
+  transform-origin: left;
+  transform: scaleX(0);
+  inset: 0;
+  position: absolute;
+  transition: transform 0.5s ease-in-out;
 }
 .common-button:focus {
   outline: none;
@@ -228,6 +161,16 @@ ol {
 .common-button:focus-visible {
   box-shadow: 2px 2px 0 var(--text-color);
   transition: box-shadow 0.3s ease;
+}
+.common-button:hover:before {
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(1);
+}
+.common-button .button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--text-animated);
+  mix-blend-mode: difference;
 }
 
 /*# sourceMappingURL=default.css.map */

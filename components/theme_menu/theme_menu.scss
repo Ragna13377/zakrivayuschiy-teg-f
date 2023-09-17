@@ -45,7 +45,7 @@ $btn_transition: 0.3s ease;
         animation: dancing_trangle 0.5s ease-in-out infinite alternate;
       }
     }
-    &:hover, &:focus{
+    &:focus, &:hover{
       outline: none;
       transition: opacity $btn_transition;
       opacity: 0.6;

@@ -21,3 +21,21 @@
     transform: translateX(-4px);
   }
 }
+
+@keyframes heart_beat {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.5);
+  }
+}
+
+@keyframes sparks_explosion {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}

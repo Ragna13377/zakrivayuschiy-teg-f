@@ -56,7 +56,7 @@ let path = {
   // css: [`${srcFolder}/**/*.css`, `!${srcFolder}/**/fonts.css`], Пример отрицания
   src: {
     html: `${srcFolder}/*.pug`,
-    scss: [`${srcFolder}/styles/**.scss`, `!${srcFolder}/styles/{global,variables}.scss`],
+    scss: `${srcFolder}/styles/**.scss`,
     scss_layout: `${srcFolder}/layout/**/*.scss`,
     js: `${srcFolder}/scripts/**/*.js`,
     images: `${srcFolder}/images/**/*.{avif,webp,ico,gif,png,jpg,svg}`,
@@ -161,10 +161,12 @@ function scss_layout(){
       .pipe(gulp.dest(path.dest.css))
       .pipe(browserSync.stream());
 }
-
+//Сделал криво, потому что нельзя сразу в watch засунуть 2 функции
+//или пайпнуть без запуска gulp. По непонятной причине просто при запуске функций срабатывает лишь одна из двух
 function scss_components(){
-  return scss()
-      .pipe(scss_layout())
+  return gulp.src(path.src.font_style)
+      .pipe(scss())
+      .pipe(scss_layout());
 }
 
 function css() {

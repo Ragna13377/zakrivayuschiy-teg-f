@@ -1,10 +1,8 @@
-@import "../styles/globals";
-@import "../styles/variables";
-
 :root{
   --fw-text: var(--fw-text_light, 400);
   --fw-title-text: var(--fw-title-text_light, 700);
   --text-color: var(--text-color_light, #000);
+  --text-animated: var(--text-animated_light, #fff);
   --bg-color: var(--bg-color_light, #fff);
   --bg-image: var(--bg-image_light,'./images/background.png');
   --bg-grid-start: var(--bg-grid-start_light, #d3d3d3);
@@ -12,6 +10,7 @@
   --bg-color-start: var(--bg-color-start_light, #e7e7e7);
   --bg-color-end: var(--bg-color-end_light, #1a1a1a);
   --text-stroke: var(--text-stroke_light, #fff);
+  --heart-contour: var(--heart-contour_light, #fff);
 }
 
 @import "../components/header/header";
@@ -45,12 +44,34 @@
   border: 2px solid currentColor;
   color: var(--text-color);
   cursor: pointer;
+  position: relative;
   transition: box-shadow $btn_transition;
+  &:before{
+    content: '';
+    background-color: currentColor;
+    transform-origin: left;
+    transform: scaleX(0);
+    inset: 0;
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+  }
   &:focus{
     outline: none;
   }
   &:focus-visible{
     box-shadow: 2px 2px 0 var(--text-color);
     transition: box-shadow $btn_transition;
+  }
+  &:hover{
+    &:before{
+      transition: transform 0.5s ease-in-out;
+      transform: scaleX(1);
+    }
+  }
+  .button__text{
+    position: relative;
+    z-index: 1;
+    color: var(--text-animated);
+    mix-blend-mode: difference;
   }
 }

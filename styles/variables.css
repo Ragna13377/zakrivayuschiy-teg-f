@@ -1,4 +1,34 @@
-@charset "UTF-8";
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font: "Inter-Variable";
+  --font-callback: "Inter";
+  --accent-font: "PressStart2P";
+  --heart-sparks: #FF0000;
+  --heart-main-body: transparent;
+  --heart-core: transparent;
+  --heart-contour_light: #000;
+  --heart-contour_dark: #00CC14;
+  --fw-text_light: 400;
+  --fw-title-text_light: 700;
+  --text-color_light: #000;
+  --text-animated_light: #fff;
+  --bg-color_light: #fff;
+  --bg-image_light: "./images/background.png";
+  --bg-grid-start_light: #d3d3d3;
+  --bg-grid-end_light: rgba(211, 211, 211, 0);
+  --bg-color-start_light: #e7e7e7;
+  --bg-color-end_light: #1a1a1a;
+  --text-stroke_light: #fff;
+  --fw-text_dark: 465;
+  --fw-title-text_dark: 785;
+  --text-color_dark: #00CC14;
+  --text-animated_dark: #00CC14;
+  --bg-color_dark: #000;
+  --bg-image_dark: "./images/background_dark.png";
+  --bg-grid-start_dark: #000;
+  --bg-grid-end_dark: rgba(0, 0, 0, 0);
+  --bg-color-start_dark: #007f0c;
+  --bg-color-end_dark: #004306;
+  --text-stroke_dark: #000;
+}
 
 /*# sourceMappingURL=variables.css.map */
