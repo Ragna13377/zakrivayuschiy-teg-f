@@ -45,29 +45,29 @@
     aspect-ratio: 1/1;
   }
 }
-.card_filter-hue {
-  filter: hue-rotate(45deg) brightness(0.8);
+.card_filter-mixed {
+  filter: brightness(0.8) grayscale(1);
 }
 .card_filter-opacity {
-  filter: opacity(0.8) brightness(0.8);
+  filter: opacity(0.8);
 }
-.card_filter-sepia {
-  filter: sepia(0.6) brightness(0.5);
+.card_filter-hue {
+  filter: hue-rotate(90deg);
 }
 .card_filter-blur {
-  filter: blur(0.8px) brightness(0.8);
+  filter: blur(0.8px);
 }
 .card_filter-bright-contrast {
-  filter: contrast(1.4) brightness(0.8);
+  filter: contrast(1.4);
 }
 .card_filter-grayscale {
-  filter: grayscale(0.6) brightness(0.8);
+  filter: grayscale(0.6);
 }
-.card_filter-invert {
-  filter: brightness(2) grayscale(0.5) invert(0.2);
+.card_filter-sepia {
+  filter: sepia(0.5);
 }
 .card_filter-saturate {
-  filter: saturate(1.5) brightness(0.8);
+  filter: saturate(1.5);
 }
 .card__label {
   position: absolute;
