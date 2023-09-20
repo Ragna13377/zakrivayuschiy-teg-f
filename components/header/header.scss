@@ -1,20 +1,20 @@
-.header{
+.header {
   padding-block: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) 25px;
-  margin-block-end: 104px;
+  margin-block-end: 100px;
   font-family: var(--accent-font, Consolas, monospace);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
   text-align: center;
-  &__title{
+  &__title {
     font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
     margin-block-end: 20px;
   }
-  &__name{
+  &__name {
     font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
     margin-block-end: 25px;
   }
 }
 
-@import "../theme_menu/theme_menu";
+@import '../theme_menu/theme_menu';

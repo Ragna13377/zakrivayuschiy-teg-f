@@ -1,13 +1,13 @@
 $btn_transition: 0.3s ease;
-.theme-menu{
-  .theme-menu__list{
+.theme-menu {
+  .theme-menu__list {
     display: inline-flex;
     flex-direction: column;
     gap: 14px;
     text-align: start;
     margin-inline-start: 15px;
   }
-  .theme-menu__button{
+  .theme-menu__button {
     position: relative;
     color: var(--text-color);
     font-family: var(--accent-font, Consolas, monospace);
@@ -22,7 +22,7 @@ $btn_transition: 0.3s ease;
     cursor: pointer;
     display: list-item;
     transition: opacity $btn_transition;
-    &:after{
+    &:after {
       $offset: 3px;
       content: '';
       position: absolute;
@@ -35,27 +35,27 @@ $btn_transition: 0.3s ease;
       transform-origin: left;
       transition: transform $btn_transition;
     }
-    &:disabled{
+    &:disabled {
       pointer-events: none;
       opacity: 0.6;
-      &:before{
+      &:before {
         position: absolute;
         content: '▶';
         inset-inline-start: -20px;
         animation: dancing_trangle 0.5s ease-in-out infinite alternate;
       }
     }
-    &:focus, &:hover{
+    &:focus,
+    &:hover {
       outline: none;
       transition: opacity $btn_transition;
       opacity: 0.6;
     }
-    &:focus-visible{
-      &:after{
+    &:focus-visible {
+      &:after {
         transform: scaleX(1);
         transition: transform $btn_transition;
       }
     }
   }
 }
-

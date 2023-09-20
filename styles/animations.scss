@@ -14,28 +14,28 @@
 */
 
 @keyframes dancing_trangle {
-  from{
+  from {
     transform: translateX(4px);
   }
-  to{
+  to {
     transform: translateX(-4px);
   }
 }
 
 @keyframes heart_beat {
-  from{
+  from {
     transform: scale(1);
   }
-  to{
+  to {
     transform: scale(1.5);
   }
 }
 
 @keyframes sparks_explosion {
-  from{
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
 }

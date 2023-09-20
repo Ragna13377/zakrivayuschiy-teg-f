@@ -12,7 +12,7 @@
 }
 .theme-menu .theme-menu__item:has(.theme-menu__button:disabled) {
   opacity: 0.6;
-  list-style-type: "▶";
+  list-style-type: '▶';
   pointer-events: none;
 }
 .theme-menu .theme-menu__button {

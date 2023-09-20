@@ -1,46 +1,54 @@
-.card{
+.card {
   color: var(--text-color);
-  &__title{
+  &__title {
     font-size: 18px;
-    padding: 10px 5px;
+    padding: 5px 5px;
     line-height: normal;
     font-style: normal;
-    font-variation-settings: "wght" var(--fw-title-text);
+    word-spacing: 1.2px;
+    font-variation-settings: 'wght' var(--fw-title-text);
+    @media (width <= 375px) {
+      padding: 5px 9px;
+      word-spacing: 0;
+    }
   }
-  &__picture-wrapper{
+  &__picture-wrapper {
     position: relative;
   }
-  &__image{
+  &__image {
     object-fit: cover;
     object-position: center;
     inline-size: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1.01;
+    @media (width <= 375px) {
+      aspect-ratio: 1 / 1;
+    }
   }
-  &_filter-hue{
+  &_filter-hue {
     filter: brightness(0.8) hue-rotate(45deg);
   }
-  &_filter-opacity{
+  &_filter-opacity {
     filter: brightness(0.8) opacity(0.8);
   }
-  &_filter-sepia{
+  &_filter-sepia {
     filter: brightness(0.5) sepia(0.6);
   }
-  &_filter-blur{
+  &_filter-blur {
     filter: brightness(0.8) blur(0.8px);
   }
-  &_filter-bright-contrast{
-    filter: brightness(0.8) contrast(1.4) ;
+  &_filter-bright-contrast {
+    filter: brightness(0.8) contrast(1.4);
   }
-  &_filter-grayscale{
+  &_filter-grayscale {
     filter: brightness(0.8) grayscale(0.6);
   }
-  &_filter-invert{
+  &_filter-invert {
     filter: brightness(2) grayscale(0.5) invert(0.2);
   }
-  &_filter-saturate{
+  &_filter-saturate {
     filter: brightness(0.8) saturate(1.5);
   }
-  &__label{
+  &__label {
     position: absolute;
     inset-inline-end: clamp(0.6875rem, 0.3794rem + 1.3146vw, 1.5625rem);
     inset-block-start: 25px;
@@ -54,103 +62,116 @@
     mix-blend-mode: hard-light;
     z-index: 1;
     text-shadow:
-        -1px 0 var(--text-stroke),
-        0 1px var(--text-stroke),
-        1px 0 var(--text-stroke),
-        0 -1px var(--text-stroke);
-    @supports((text-stroke: 1px var(--text-stroke)) or (-webkit-text-stroke: 1px var(--text-stroke))) {
+      -1px 0 var(--text-stroke),
+      0 1px var(--text-stroke),
+      1px 0 var(--text-stroke),
+      0 -1px var(--text-stroke);
+    @supports (
+      (text-stroke: 1px var(--text-stroke)) or
+        (-webkit-text-stroke: 1px var(--text-stroke))
+    ) {
       -webkit-text-stroke: 1px var(--text-stroke);
       text-stroke: 1px var(--text-stroke);
       text-shadow: none;
     }
   }
-  &__content{
-    padding: 25px;
+  &__content {
+    padding: 24px 24px 22px;
     display: flex;
     flex-direction: column;
     gap: 25px;
+    @media (width <= 375px) {
+      padding: 24px;
+      gap: 28px;
+    }
   }
-  &__text{
+  &__text {
     font-size: 18px;
     line-height: calc(21 / 18 * 100%);
     font-style: normal;
-    font-variation-settings: "wght" var(--fw-text);
+    font-variation-settings: 'wght' var(--fw-text);
   }
-  &__button-container{
+  &__button-container {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     padding: 0 25px 25px;
     justify-content: end;
     align-items: center;
   }
-  &__icon-button{
+  &__icon-button {
+    inline-size: 39px;
+    block-size: 39px;
     background-color: var(--bg-color);
+    padding: 0;
     cursor: pointer;
-    padding: 4px 4px 2px;
     border: 2px solid transparent;
     transition: border-color 0.3s ease;
-    .core{
+    .like-icon {
+      min-inline-size: 39px;
+      aspect-ratio: 1/1;
+    }
+    .core {
       transition: fill 0.3s 0.03s linear;
     }
-    .main-body{
+    .main-body {
       transition: fill 0.3s linear;
     }
-    .contour{
+    .contour {
       transition: fill 0.1s linear;
     }
-    .is-liked{
-      .core{
+    .is-liked {
+      .core {
         --heart-core: var(--heart-sparks);
         transition: fill 0.3s linear;
       }
-      .main-body{
+      .main-body {
         --heart-main-body: var(--heart-sparks);
         transition: fill 0.3s 0.05s linear;
       }
-      .contour{
+      .contour {
         --heart-contour: var(--heart-sparks);
         transition: fill 0.3s 0.06s linear;
       }
-      .heart{
+      .heart {
         transform-origin: center;
         animation: heart_beat 0.3s 0.1s ease-in alternate;
       }
-      .sparks{
+      .sparks {
         animation: sparks_explosion 0.3s 0.3s ease-in alternate;
       }
     }
-    &:hover{
-      .core{
+    &:hover {
+      .core {
         --heart-core: var(--heart-contour);
         transition: fill 0.3s linear;
       }
-      .main-body{
+      .main-body {
         --heart-main-body: var(--heart-contour);
         transition: fill 0.3s 0.05s linear;
       }
     }
-    &:active{
-      .core{
+    &:active {
+      .core {
         --heart-core: var(--heart-sparks);
         transition: fill 0.3s linear;
       }
-      .main-body{
+      .main-body {
         --heart-main-body: var(--heart-sparks);
         transition: fill 0.3s 0.05s linear;
       }
     }
-    .sparks{
+    .sparks {
       opacity: 0;
     }
-    &:focus{
+    &:focus {
       outline: none;
     }
-    &:focus-visible{
+    &:focus-visible {
       border-color: var(--text-color);
       transition: border-color 0.3s ease;
     }
   }
-  &__like-button{
+  &__like-button {
     padding: 9px 17px;
     min-inline-size: 130px;
     min-block-size: 38px;

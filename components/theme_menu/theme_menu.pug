@@ -1,19 +1,19 @@
 <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
-	-
-		var buttonArray = [
-		{'type': 'dark', 'text': 'Темно', 'active': true},
-		{'type': 'auto', 'text': 'Авто', 'active': false},
-		{'type': 'light', 'text': 'Светло', 'active': true}
-		]
+  -
+    var buttonArray = [
+    {'type': 'dark', 'text': 'Темно', 'active': true},
+    {'type': 'auto', 'text': 'Авто', 'active': false},
+    {'type': 'light', 'text': 'Светло', 'active': true}
+    ]
 
-	mixin switch-button(type, text, active)
-		if active === true
-			button.theme-menu__button(type="button" data-theme=type)=text
-		else
-			button.theme-menu__button(type="button" data-theme=type disabled)=text
+  mixin switch-button(type, text, active)
+    if active === true
+      button.theme-menu__button(type='button', data-theme=type)= text
+    else
+      button.theme-menu__button(type='button', data-theme=type, disabled)= text
 
 nav.theme-menu.header__theme-menu
-	ul.theme-menu__list
-		each item in buttonArray
-			li.theme-menu__item
-				+switch-button(item.type, item.text, item.active)
+  ul.theme-menu__list
+    each item in buttonArray
+      li.theme-menu__item
+        +switch-button(item.type, item.text, item.active)

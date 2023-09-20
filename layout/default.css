@@ -5,7 +5,7 @@
   --text-color: var(--text-color_light, #000);
   --text-animated: var(--text-animated_light, #fff);
   --bg-color: var(--bg-color_light, #fff);
-  --bg-image: var(--bg-image_light,"./images/background.png");
+  --bg-image: var(--bg-image_light, "./images/background.png");
   --bg-grid-start: var(--bg-grid-start_light, #d3d3d3);
   --bg-grid-end: var(--bg-grid-end_light, rgba(211, 211, 211, 0));
   --bg-color-start: var(--bg-color-start_light, #e7e7e7);
@@ -16,7 +16,7 @@
 
 .header {
   padding-block: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) 25px;
-  margin-block-end: 104px;
+  margin-block-end: 100px;
   font-family: var(--accent-font, Consolas, monospace);
   font-style: normal;
   font-weight: 400;
@@ -89,16 +89,21 @@
 }
 
 .footer {
-  margin-block-start: 54px;
+  margin-block-start: 50px;
   padding-inline: 35px;
 }
 .footer__button {
   display: flex;
-  padding: 20px 15px;
+  padding: 15px 20px;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
   flex-wrap: wrap;
+}
+@media (width <= 375px) {
+  .footer__button {
+    padding: 15px 15px;
+  }
 }
 .footer svg {
   inline-size: 21px;
@@ -108,12 +113,53 @@
 
 @media (width <= 375px) {
   .footer svg {
+    display: block;
+    margin: 0 auto 8px;
     inline-size: 28px;
   }
 }
 .footer.page__container {
   border: none;
   background-color: transparent;
+}
+
+.dialog {
+  padding: 30px;
+  border-color: var(--text-color);
+  background-color: var(--bg-color);
+  max-inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
+}
+.dialog::backdrop {
+  opacity: 0.75;
+  background: #000;
+}
+.dialog .dialog__content {
+  display: flex;
+  flex-grow: 1;
+  gap: 20px;
+  color: var(--text-color);
+  font-family: var(--accent-font, Consolas, monospace);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+.dialog .dialog__content svg {
+  min-inline-size: 39px;
+  aspect-ratio: 1/1;
+}
+.dialog .dialog__form-close {
+  margin-block-start: 30px;
+}
+.dialog .dialog__button {
+  padding: 9px 17px;
+  width: 100%;
+  min-block-size: 38px;
+}
+.dialog::backdrop {
+  opacity: 0.75;
+  background-color: #000;
 }
 
 .page {
@@ -125,7 +171,7 @@
   background-position: center;
   background-attachment: fixed;
   color: var(--text-color);
-  padding-block: 105px 102px;
+  padding-block: 100px 102px;
 }
 @supports (font-variation-settings: normal) {
   .page {

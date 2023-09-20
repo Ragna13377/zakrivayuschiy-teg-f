@@ -1,10 +1,10 @@
-:root{
+:root {
   --fw-text: var(--fw-text_light, 400);
   --fw-title-text: var(--fw-title-text_light, 700);
   --text-color: var(--text-color_light, #000);
   --text-animated: var(--text-animated_light, #fff);
   --bg-color: var(--bg-color_light, #fff);
-  --bg-image: var(--bg-image_light,'./images/background.png');
+  --bg-image: var(--bg-image_light, './images/background.png');
   --bg-grid-start: var(--bg-grid-start_light, #d3d3d3);
   --bg-grid-end: var(--bg-grid-end_light, rgba(211, 211, 211, 0));
   --bg-color-start: var(--bg-color-start_light, #e7e7e7);
@@ -13,10 +13,10 @@
   --heart-contour: var(--heart-contour_light, #fff);
 }
 
-@import "../components/header/header";
-@import "../components/footer/footer";
+@import '../components/header/header';
+@import '../components/footer/footer';
 
-.page{
+.page {
   font-family: var(--font-callback, Arial, sans-serif);
   @supports (font-variation-settings: normal) {
     font-family: var(--font, Arial, sans-serif);
@@ -24,17 +24,28 @@
   font-variation-settings: 'wght' var(--fw-text);
   background-color: var(--bg-color);
   $line-width: 2px;
-  background-image: repeating-linear-gradient(90deg, var(--bg-grid-start) 0, var(--bg-grid-start) $line-width, var(--bg-grid-end) $line-width, var(--bg-grid-end) $line-width*2),
-  repeating-linear-gradient(var(--bg-grid-start) 0, var(--bg-grid-start) $line-width, var(--bg-grid-end) $line-width, var(--bg-grid-end) $line-width*2),
-  linear-gradient(var(--bg-color-start) 0.01%, var(--bg-color-end));
+  background-image: repeating-linear-gradient(
+      90deg,
+      var(--bg-grid-start) 0,
+      var(--bg-grid-start) $line-width,
+      var(--bg-grid-end) $line-width,
+      var(--bg-grid-end) $line-width * 2
+    ),
+    repeating-linear-gradient(
+      var(--bg-grid-start) 0,
+      var(--bg-grid-start) $line-width,
+      var(--bg-grid-end) $line-width,
+      var(--bg-grid-end) $line-width * 2
+    ),
+    linear-gradient(var(--bg-color-start) 0.01%, var(--bg-color-end));
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   color: var(--text-color);
-  padding-block: 105px 102px;
+  padding-block: 100px 102px;
 }
 
-.common-button{
+.common-button {
   background-color: var(--bg-color);
   font-style: normal;
   font-weight: 400;
@@ -46,7 +57,7 @@
   cursor: pointer;
   position: relative;
   transition: box-shadow $btn_transition;
-  &:before{
+  &:before {
     content: '';
     background-color: currentColor;
     transform-origin: left;
@@ -55,20 +66,20 @@
     position: absolute;
     transition: transform 0.5s ease-in-out;
   }
-  &:focus{
+  &:focus {
     outline: none;
   }
-  &:focus-visible{
+  &:focus-visible {
     box-shadow: 2px 2px 0 var(--text-color);
     transition: box-shadow $btn_transition;
   }
-  &:hover{
-    &:before{
+  &:hover {
+    &:before {
       transition: transform 0.5s ease-in-out;
       transform: scaleX(1);
     }
   }
-  .button__text{
+  .button__text {
     position: relative;
     z-index: 1;
     color: var(--text-animated);

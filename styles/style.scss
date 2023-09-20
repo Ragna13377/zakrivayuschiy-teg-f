@@ -17,15 +17,15 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  &__container{
+  &__container {
     margin-inline: auto;
     border: 2px solid var(--text-color);
     background-color: var(--bg-color);
     max-width: min(696px, 100vw);
   }
-  .page__list > *:not(:last-child){
-    margin-bottom: 54px;
+  .page__list > *:not(:last-child) {
+    margin-bottom: 53px;
   }
 }
 
-@import "../components/card/card";
+@import '../components/card/card';
