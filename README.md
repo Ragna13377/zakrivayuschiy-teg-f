@@ -8,4 +8,4 @@
 
 ## Важно!
 
-Не забыть ```npm i```
+https://github.com/Ragna13377/zakrivayuschiy-teg-f/
