@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /* В этом файле уже написаны некоторые базовые стили, которые сбрасывают или преобразуют дефольное браузерное поведение.
 Здесь же лежит утилитарный класс visually-hidden на случай, если нужно скрыть какой-то элемент, но оставить доступным для скринридера.
 Вы можете изменять этот файл или дополнять. Но скорее всего, вам это не потребуется. */
@@ -32,7 +33,7 @@ a {
 
 button,
 input {
-  color: currentColor;
+  color: currentcolor;
   font-family: inherit;
   font-size: inherit;
 }
@@ -51,5 +52,3 @@ ol {
   clip-path: inset(50%);
   white-space: nowrap;
 }
-
-/*# sourceMappingURL=globals.css.map */

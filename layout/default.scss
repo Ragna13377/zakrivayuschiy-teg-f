@@ -1,3 +1,6 @@
+@import '../components/header/header';
+@import '../components/footer/footer';
+
 :root {
   --fw-text: var(--fw-text_light, 400);
   --fw-title-text: var(--fw-title-text_light, 700);
@@ -6,24 +9,25 @@
   --bg-color: var(--bg-color_light, #fff);
   --bg-image: var(--bg-image_light, './images/background.png');
   --bg-grid-start: var(--bg-grid-start_light, #d3d3d3);
-  --bg-grid-end: var(--bg-grid-end_light, rgba(211, 211, 211, 0));
+  --bg-grid-end: var(--bg-grid-end_light, rgb(211 211 211 / 0%));
   --bg-color-start: var(--bg-color-start_light, #e7e7e7);
   --bg-color-end: var(--bg-color-end_light, #1a1a1a);
   --text-stroke: var(--text-stroke_light, #fff);
   --heart-contour: var(--heart-contour_light, #fff);
 }
 
-@import '../components/header/header';
-@import '../components/footer/footer';
-
 .page {
   font-family: var(--font-callback, Arial, sans-serif);
+
   @supports (font-variation-settings: normal) {
     font-family: var(--font, Arial, sans-serif);
   }
+
   font-variation-settings: 'wght' var(--fw-text);
   background-color: var(--bg-color);
+
   $line-width: 2px;
+
   background-image: repeating-linear-gradient(
       90deg,
       var(--bg-grid-start) 0,
@@ -52,33 +56,38 @@
   line-height: 90%;
   font-size: 14px;
   font-family: var(--accent-font, Consolas, monospace);
-  border: 2px solid currentColor;
+  border: 2px solid currentcolor;
   color: var(--text-color);
   cursor: pointer;
   position: relative;
   transition: box-shadow $btn_transition;
-  &:before {
+
+  &::before {
     content: '';
-    background-color: currentColor;
+    background-color: currentcolor;
     transform-origin: left;
     transform: scaleX(0);
     inset: 0;
     position: absolute;
     transition: transform 0.5s ease-in-out;
   }
+
   &:focus {
     outline: none;
   }
+
   &:focus-visible {
     box-shadow: 2px 2px 0 var(--text-color);
     transition: box-shadow $btn_transition;
   }
+
   &:hover {
-    &:before {
+    &::before {
       transition: transform 0.5s ease-in-out;
       transform: scaleX(1);
     }
   }
+
   .button__text {
     position: relative;
     z-index: 1;

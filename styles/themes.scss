@@ -6,7 +6,7 @@
   --bg-color: var(--bg-color_dark, #000);
   --bg-image: var(--bg-image_dark, './images/background_dark.png');
   --bg-grid-start: var(--bg-grid-start_dark, #000);
-  --bg-grid-end: var(--bg-grid-end_dark, rgba(0, 0, 0, 0));
+  --bg-grid-end: var(--bg-grid-end_dark, rgb(0 0 0 / 0%));
   --bg-color-start: var(--bg-color-start_dark, #007f0c);
   --bg-color-end: var(--bg-color-end_dark, #004306);
   --text-stroke: var(--text-stroke_dark, #000);
@@ -22,7 +22,7 @@
     --bg-color: var(--bg-color_dark, #000);
     --bg-image: var(--bg-image_dark, './images/background_dark.png');
     --bg-grid-start: var(--bg-grid-start_dark, #000);
-    --bg-grid-end: var(--bg-grid-end_dark, rgba(0, 0, 0, 0));
+    --bg-grid-end: var(--bg-grid-end_dark, rgb(0 0 0 / 0%));
     --bg-color-start: var(--bg-color-start_dark, #007f0c);
     --bg-color-end: var(--bg-color-end_dark, #004306);
     --text-stroke: var(--text-stroke_dark, #000);
@@ -38,7 +38,7 @@
   --bg-color: var(--bg-color_ligth, #fff);
   --bg-image: var(--bg-image_light, './images/background.png');
   --bg-grid-start: var(--bg-grid-start_light, #d3d3d3);
-  --bg-grid-end: var(--bg-grid-end_light, rgba(211, 211, 211, 0));
+  --bg-grid-end: var(--bg-grid-end_light, rgb(211 211 211 / 0%));
   --bg-color-start: var(--bg-color-start_light, #e7e7e7);
   --bg-color-end: var(--bg-color-end_light, #1a1a1a);
   --text-stroke: var(--text-stroke_light, #fff);

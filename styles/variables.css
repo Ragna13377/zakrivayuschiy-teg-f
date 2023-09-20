@@ -2,7 +2,7 @@
   --font: "Inter-Variable";
   --font-callback: "Inter";
   --accent-font: "PressStart2P";
-  --heart-sparks: #ff0000;
+  --heart-sparks: #f00;
   --heart-main-body: transparent;
   --heart-core: transparent;
   --heart-contour_light: #000;
@@ -14,7 +14,7 @@
   --bg-color_light: #fff;
   --bg-image_light: "./images/background.png";
   --bg-grid-start_light: #d3d3d3;
-  --bg-grid-end_light: rgba(211, 211, 211, 0);
+  --bg-grid-end_light: rgb(211 211 211 / 0%);
   --bg-color-start_light: #e7e7e7;
   --bg-color-end_light: #1a1a1a;
   --text-stroke_light: #fff;
@@ -25,10 +25,8 @@
   --bg-color_dark: #000;
   --bg-image_dark: "./images/background_dark.png";
   --bg-grid-start_dark: #000;
-  --bg-grid-end_dark: rgba(0, 0, 0, 0);
+  --bg-grid-end_dark: rgb(0 0 0 / 0%);
   --bg-color-start_dark: #007f0c;
   --bg-color-end_dark: #004306;
   --text-stroke_dark: #000;
 }
-
-/*# sourceMappingURL=variables.css.map */
