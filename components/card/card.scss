@@ -28,25 +28,25 @@
     filter: hue-rotate(45deg) brightness(0.8);
   }
   &_filter-opacity {
-    filter: opacity(0.8) brightness(0.8);
+    filter: opacity(0.8);
   }
-  &_filter-sepia {
-    filter: sepia(0.6) brightness(0.5);
+  &_filter-brightness {
+    filter: brightness(0.5);
   }
   &_filter-blur {
-    filter: blur(0.8px) brightness(0.8);
+    filter: blur(0.8px);
   }
   &_filter-bright-contrast {
-    filter: contrast(1.4) brightness(0.8);
+    filter: contrast(1.4);
   }
   &_filter-grayscale {
-    filter: grayscale(0.6) brightness(0.8);
+    filter: grayscale(0.6);
   }
-  &_filter-invert {
-    filter: brightness(2) grayscale(0.5) invert(0.2);
+  &_filter-sepia {
+    filter: sepia(0.5);
   }
   &_filter-saturate {
-    filter: saturate(1.5) brightness(0.8);
+    filter: saturate(1.5);
   }
   &__label {
     position: absolute;
