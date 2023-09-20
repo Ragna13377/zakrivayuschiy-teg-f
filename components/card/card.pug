@@ -4,8 +4,8 @@ mixin card(index, imgUrl, altText, label, filter, title, ...text)
     .card__picture-wrapper
       .card__label= label
       picture.card__picture(class=filter)
-        source(srcset=imgUrl + index + '.avif', type='avif')
-        source(srcset=imgUrl + index + '.webp', type='webp')
+        source(srcset=imgUrl + index + '.avif', type='image/avif')
+        source(srcset=imgUrl + index + '.webp', type='image/webp')
         if index < 2
           img.card__image(src=imgUrl + index + '.png', alt=altText)
         else
