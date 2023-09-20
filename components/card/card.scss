@@ -25,28 +25,28 @@
     }
   }
   &_filter-hue {
-    filter: brightness(0.8) hue-rotate(45deg);
+    filter: hue-rotate(45deg) brightness(0.8);
   }
   &_filter-opacity {
-    filter: brightness(0.8) opacity(0.8);
+    filter: opacity(0.8) brightness(0.8);
   }
   &_filter-sepia {
-    filter: brightness(0.5) sepia(0.6);
+    filter: sepia(0.6) brightness(0.5);
   }
   &_filter-blur {
-    filter: brightness(0.8) blur(0.8px);
+    filter: blur(0.8px) brightness(0.8);
   }
   &_filter-bright-contrast {
-    filter: brightness(0.8) contrast(1.4);
+    filter: contrast(1.4) brightness(0.8);
   }
   &_filter-grayscale {
-    filter: brightness(0.8) grayscale(0.6);
+    filter: grayscale(0.6) brightness(0.8);
   }
   &_filter-invert {
     filter: brightness(2) grayscale(0.5) invert(0.2);
   }
   &_filter-saturate {
-    filter: brightness(0.8) saturate(1.5);
+    filter: saturate(1.5) brightness(0.8);
   }
   &__label {
     position: absolute;
