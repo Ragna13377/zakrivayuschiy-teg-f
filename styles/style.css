@@ -46,7 +46,7 @@
   }
 }
 .card_filter-mixed {
-  filter: grayscale(1);
+  filter: brightness(0.8) grayscale(1);
 }
 .card_filter-opacity {
   filter: opacity(0.8);

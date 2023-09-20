@@ -3,13 +3,14 @@ mixin card(index, imgUrl, altText, label, filter, title, ...text)
     h2.card__title= title
     .card__picture-wrapper
       .card__label= label
-      picture.card__picture(class=filter)
-        source(srcset=imgUrl + index + '.avif', type='image/avif')
-        source(srcset=imgUrl + index + '.webp', type='image/webp')
+      picture.card__picture
+        source(srcset=imgUrl + index + '.avif')
+        source(srcset=imgUrl + index + '.webp')
         if index < 2
           img.card__image(src=imgUrl + index + '.png', alt=altText)
         else
           img.card__image(
+            class=filter
             src=imgUrl + index + '.png',
             alt=altText,
             loading='lazy'
