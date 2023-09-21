@@ -120,6 +120,9 @@
   align-items: center;
 }
 .card__icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 39px;
   block-size: 39px;
   background-color: var(--bg-color);
@@ -183,6 +186,7 @@
   outline: none;
 }
 .card__icon-button:focus-visible {
+  outline: none;
   border-color: var(--text-color);
   transition: border-color 0.3s ease;
 }
