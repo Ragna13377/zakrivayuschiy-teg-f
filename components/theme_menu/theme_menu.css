@@ -9,7 +9,7 @@
 .theme-menu .theme-menu__button {
   position: relative;
   color: var(--text-color);
-  font-family: var(--accent-font, 'PressStart2P', Copperplate, fantasy);
+  font-family: var(--accent-font, "PressStart2P", Copperplate, fantasy);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -23,7 +23,7 @@
   transition: opacity 0.3s ease;
 }
 .theme-menu .theme-menu__button:after {
-  content: '';
+  content: "";
   position: absolute;
   background-color: currentColor;
   inset-block-end: -5px;
@@ -40,12 +40,11 @@
 }
 .theme-menu .theme-menu__button:disabled:before {
   position: absolute;
-  content: '▶';
+  content: "▶";
   inset-inline-start: -20px;
   animation: dancing_trangle 0.5s ease-in-out infinite alternate;
 }
-.theme-menu .theme-menu__button:focus,
-.theme-menu .theme-menu__button:hover {
+.theme-menu .theme-menu__button:focus, .theme-menu .theme-menu__button:hover {
   outline: none;
   transition: opacity 0.3s ease;
   opacity: 0.6;

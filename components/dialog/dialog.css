@@ -13,7 +13,7 @@
   flex-grow: 1;
   gap: 20px;
   color: var(--text-color);
-  font-family: var(--accent-font, 'PressStart2P', Copperplate, fantasy);
+  font-family: var(--accent-font, "PressStart2P", Copperplate, fantasy);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
