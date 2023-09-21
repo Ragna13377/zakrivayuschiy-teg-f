@@ -1,0 +1,38 @@
+.dialog[open] {
+  padding: 30px;
+  border-color: var(--text-color);
+  background-color: var(--bg-color);
+  max-inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
+}
+.dialog[open]::backdrop {
+  opacity: 0.75;
+  background: #000;
+}
+.dialog[open] .dialog__content {
+  display: flex;
+  flex-grow: 1;
+  gap: 20px;
+  color: var(--text-color);
+  font-family: var(--accent-font, 'PressStart2P', Copperplate, fantasy);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+.dialog[open] .dialog__content svg {
+  inline-size: 39px;
+  min-inline-size: 39px;
+  aspect-ratio: 1/1;
+}
+.dialog[open] .dialog__form-close {
+  margin-block-start: 30px;
+}
+.dialog[open] .dialog__button {
+  padding: 9px 17px;
+  width: 100%;
+  min-block-size: 38px;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=dialog.css.map */

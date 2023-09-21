@@ -1,21 +1,18 @@
 @charset "UTF-8";
-
 .header {
   padding-block: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) 25px;
   margin-block-end: 100px;
-  font-family: var(--accent-font, Consolas, monospace);
+  font-family: var(--accent-font, "PressStart2P", Copperplate, fantasy);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
   text-align: center;
 }
-
 .header__title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   margin-block-end: 20px;
 }
-
 .header__name {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   margin-block-end: 25px;
@@ -28,11 +25,10 @@
   text-align: start;
   margin-inline-start: 15px;
 }
-
 .theme-menu .theme-menu__button {
   position: relative;
   color: var(--text-color);
-  font-family: var(--accent-font, Consolas, monospace);
+  font-family: var(--accent-font, "PressStart2P", Copperplate, fantasy);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -45,11 +41,10 @@
   display: list-item;
   transition: opacity 0.3s ease;
 }
-
-.theme-menu .theme-menu__button::after {
+.theme-menu .theme-menu__button:after {
   content: "";
   position: absolute;
-  background-color: currentcolor;
+  background-color: currentColor;
   inset-block-end: -5px;
   inset-inline-start: -3px;
   inline-size: calc(100% + 6px);
@@ -58,26 +53,22 @@
   transform-origin: left;
   transition: transform 0.3s ease;
 }
-
 .theme-menu .theme-menu__button:disabled {
   pointer-events: none;
   opacity: 0.6;
 }
-
-.theme-menu .theme-menu__button:disabled::before {
+.theme-menu .theme-menu__button:disabled:before {
   position: absolute;
   content: "▶";
   inset-inline-start: -20px;
   animation: dancing_trangle 0.5s ease-in-out infinite alternate;
 }
-
 .theme-menu .theme-menu__button:focus, .theme-menu .theme-menu__button:hover {
   outline: none;
   transition: opacity 0.3s ease;
   opacity: 0.6;
 }
-
-.theme-menu .theme-menu__button:focus-visible::after {
+.theme-menu .theme-menu__button:focus-visible:after {
   transform: scaleX(1);
   transition: transform 0.3s ease;
 }
@@ -86,7 +77,6 @@
   margin-block-start: 50px;
   padding-inline: 35px;
 }
-
 .footer__button {
   display: flex;
   padding: 15px 20px;
@@ -95,13 +85,11 @@
   margin: 0 auto;
   flex-wrap: wrap;
 }
-
 @media (width <= 375px) {
   .footer__button {
-    padding: 15px;
+    padding: 15px 15px;
   }
 }
-
 .footer svg {
   inline-size: 21px;
   aspect-ratio: 1/1;
@@ -115,50 +103,46 @@
     inline-size: 28px;
   }
 }
-
 .footer.page__container {
   border: none;
   background-color: transparent;
 }
 
-.dialog {
+.dialog[open] {
   padding: 30px;
   border-color: var(--text-color);
   background-color: var(--bg-color);
   max-inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
 }
-
-.dialog::backdrop {
+.dialog[open]::backdrop {
   opacity: 0.75;
   background: #000;
 }
-
-.dialog .dialog__content {
+.dialog[open] .dialog__content {
   display: flex;
   flex-grow: 1;
   gap: 20px;
   color: var(--text-color);
-  font-family: var(--accent-font, Consolas, monospace);
+  font-family: var(--accent-font, "PressStart2P", Copperplate, fantasy);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
   text-transform: uppercase;
 }
-
-.dialog .dialog__content svg {
+.dialog[open] .dialog__content svg {
+  inline-size: 39px;
   min-inline-size: 39px;
   aspect-ratio: 1/1;
 }
-
-.dialog .dialog__form-close {
+.dialog[open] .dialog__form-close {
   margin-block-start: 30px;
 }
-
-.dialog .dialog__button {
+.dialog[open] .dialog__button {
   padding: 9px 17px;
   width: 100%;
   min-block-size: 38px;
+  text-transform: uppercase;
 }
 
 :root {
@@ -177,7 +161,7 @@
 }
 
 .page {
-  font-family: var(--font-callback, Arial, sans-serif);
+  font-family: var(--font-callback, "Inter", Arial, sans-serif);
   font-variation-settings: "wght" var(--fw-text);
   background-color: var(--bg-color);
   background-image: repeating-linear-gradient(90deg, var(--bg-grid-start) 0, var(--bg-grid-start) 2px, var(--bg-grid-end) 2px, var(--bg-grid-end) 4px), repeating-linear-gradient(var(--bg-grid-start) 0, var(--bg-grid-start) 2px, var(--bg-grid-end) 2px, var(--bg-grid-end) 4px), linear-gradient(var(--bg-color-start) 0.01%, var(--bg-color-end));
@@ -187,10 +171,9 @@
   color: var(--text-color);
   padding-block: 100px 102px;
 }
-
 @supports (font-variation-settings: normal) {
   .page {
-    font-family: var(--font, Arial, sans-serif);
+    font-family: var(--font, "Inter-Variable", Arial, sans-serif);
   }
 }
 
@@ -200,14 +183,13 @@
   font-weight: 400;
   line-height: 90%;
   font-size: 14px;
-  font-family: var(--accent-font, Consolas, monospace);
+  font-family: var(--accent-font, "PressStart2P", Copperplate, fantasy);
   border: 2px solid currentcolor;
   color: var(--text-color);
   cursor: pointer;
   position: relative;
   transition: box-shadow 0.3s ease;
 }
-
 .common-button::before {
   content: "";
   background-color: currentcolor;
@@ -217,24 +199,22 @@
   position: absolute;
   transition: transform 0.5s ease-in-out;
 }
-
 .common-button:focus {
   outline: none;
 }
-
 .common-button:focus-visible {
   box-shadow: 2px 2px 0 var(--text-color);
   transition: box-shadow 0.3s ease;
 }
-
 .common-button:hover::before {
   transition: transform 0.5s ease-in-out;
   transform: scaleX(1);
 }
-
 .common-button .button__text {
   position: relative;
   z-index: 1;
   color: var(--text-animated);
   mix-blend-mode: difference;
 }
+
+/*# sourceMappingURL=default.css.map */

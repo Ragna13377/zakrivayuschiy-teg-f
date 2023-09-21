@@ -5,18 +5,11 @@
   gap: 14px;
   text-align: start;
   margin-inline-start: 15px;
-  color: var(--text-color);
-}
-.theme-menu .theme-menu__item {
-  padding-inline-start: 4px;
-}
-.theme-menu .theme-menu__item:has(.theme-menu__button:disabled) {
-  opacity: 0.6;
-  list-style-type: '▶';
-  pointer-events: none;
 }
 .theme-menu .theme-menu__button {
-  font-family: var(--accent-font, Consolas, monospace);
+  position: relative;
+  color: var(--text-color);
+  font-family: var(--accent-font, 'PressStart2P', Copperplate, fantasy);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -26,6 +19,40 @@
   border: none;
   padding: 0;
   cursor: pointer;
+  display: list-item;
+  transition: opacity 0.3s ease;
+}
+.theme-menu .theme-menu__button:after {
+  content: '';
+  position: absolute;
+  background-color: currentColor;
+  inset-block-end: -5px;
+  inset-inline-start: -3px;
+  inline-size: calc(100% + 6px);
+  block-size: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.theme-menu .theme-menu__button:disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+.theme-menu .theme-menu__button:disabled:before {
+  position: absolute;
+  content: '▶';
+  inset-inline-start: -20px;
+  animation: dancing_trangle 0.5s ease-in-out infinite alternate;
+}
+.theme-menu .theme-menu__button:focus,
+.theme-menu .theme-menu__button:hover {
+  outline: none;
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
+}
+.theme-menu .theme-menu__button:focus-visible:after {
+  transform: scaleX(1);
+  transition: transform 0.3s ease;
 }
 
 /*# sourceMappingURL=theme_menu.css.map */

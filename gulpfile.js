@@ -42,7 +42,7 @@ const options = {
 };
 
 let srcFolder = '.';
-let distFolder = './_dist';
+let distFolder = './docs';
 
 let path = {
   dest: {
@@ -313,7 +313,7 @@ function fontsStyle() {
 }
 
 function clean() {
-  return del('_dist');
+  return del('docs');
 }
 
 // gulp.watch([path.watch.css], css);

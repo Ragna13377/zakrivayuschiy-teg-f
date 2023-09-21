@@ -1,5 +1,6 @@
 @import '../components/header/header';
 @import '../components/footer/footer';
+@import '../components/dialog/dialog';
 
 :root {
   --fw-text: var(--fw-text_light, 400);
@@ -17,10 +18,10 @@
 }
 
 .page {
-  font-family: var(--font-callback, Arial, sans-serif);
+  font-family: var(--font-callback, 'Inter', Arial, sans-serif);
 
   @supports (font-variation-settings: normal) {
-    font-family: var(--font, Arial, sans-serif);
+    font-family: var(--font, 'Inter-Variable', Arial, sans-serif);
   }
 
   font-variation-settings: 'wght' var(--fw-text);
@@ -55,7 +56,7 @@
   font-weight: 400;
   line-height: 90%;
   font-size: 14px;
-  font-family: var(--accent-font, Consolas, monospace);
+  font-family: var(--accent-font, 'PressStart2P', Copperplate, fantasy);
   border: 2px solid currentcolor;
   color: var(--text-color);
   cursor: pointer;

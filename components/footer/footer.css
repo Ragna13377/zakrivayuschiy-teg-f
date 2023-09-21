@@ -1,1 +1,36 @@
+.footer {
+  margin-block-start: 50px;
+  padding-inline: 35px;
+}
+.footer__button {
+  display: flex;
+  padding: 15px 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+@media (width <= 375px) {
+  .footer__button {
+    padding: 15px 15px;
+  }
+}
+.footer svg {
+  inline-size: 21px;
+  aspect-ratio: 1/1;
+  margin-inline-end: 8px;
+}
+
+@media (width <= 375px) {
+  .footer svg {
+    display: block;
+    margin: 0 auto 8px;
+    inline-size: 28px;
+  }
+}
+.footer.page__container {
+  border: none;
+  background-color: transparent;
+}
+
 /*# sourceMappingURL=footer.css.map */
