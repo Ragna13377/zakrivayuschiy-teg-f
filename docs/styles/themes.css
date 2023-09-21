@@ -1,0 +1,45 @@
+:root.theme-dark {
+  --fw-text: var(--fw-text_dark, 465);
+  --fw-title-text: var(--fw-title-text_dark, 785);
+  --text-color: var(--text-color_dark, #00cc14);
+  --text-animated: var(--text-animated_dark, #00cc14);
+  --bg-color: var(--bg-color_dark, #000);
+  --bg-image: var(--bg-image_dark, "./images/background_dark.png");
+  --bg-grid-start: var(--bg-grid-start_dark, #000);
+  --bg-grid-end: var(--bg-grid-end_dark, rgb(0 0 0 / 0%));
+  --bg-color-start: var(--bg-color-start_dark, #007f0c);
+  --bg-color-end: var(--bg-color-end_dark, #004306);
+  --text-stroke: var(--text-stroke_dark, #000);
+  --heart-contour: var(--heart-contour_dark, #00cc14);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fw-text: var(--fw-text_dark, 465);
+    --fw-title-text: var(--fw-title-text_dark, 785);
+    --text-color: var(--text-color_dark, #00cc14);
+    --text-animated: var(--text-animated_dark, #00cc14);
+    --bg-color: var(--bg-color_dark, #000);
+    --bg-image: var(--bg-image_dark, "./images/background_dark.png");
+    --bg-grid-start: var(--bg-grid-start_dark, #000);
+    --bg-grid-end: var(--bg-grid-end_dark, rgb(0 0 0 / 0%));
+    --bg-color-start: var(--bg-color-start_dark, #007f0c);
+    --bg-color-end: var(--bg-color-end_dark, #004306);
+    --text-stroke: var(--text-stroke_dark, #000);
+    --heart-contour: var(--heart-contour_dark, #00cc14);
+  }
+}
+:root.theme-light {
+  --fw-text: var(--fw-text_light, 400);
+  --fw-title-text: var(--fw-title-text_light, 700);
+  --text-color: var(--text-color_light, #000);
+  --text-animated: var(--text-animated_light, #fff);
+  --bg-color: var(--bg-color_ligth, #fff);
+  --bg-image: var(--bg-image_light, "./images/background.png");
+  --bg-grid-start: var(--bg-grid-start_light, #d3d3d3);
+  --bg-grid-end: var(--bg-grid-end_light, rgb(211 211 211 / 0%));
+  --bg-color-start: var(--bg-color-start_light, #e7e7e7);
+  --bg-color-end: var(--bg-color-end_light, #1a1a1a);
+  --text-stroke: var(--text-stroke_light, #fff);
+  --heart-contour: var(--heart-contour_light, #fff);
+}
